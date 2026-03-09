@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Lesson 1 - Fixed</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { border: 1px solid #ccc; padding: 20px; margin-top: 10px; min-height: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Casharkii 1aad ee React</h1>
+
+    <div class="container"></div>
+
+    <script src="../src/react.development.js"></script>
+    <script src="../src/react-dom.development.js"></script>
+    <script src="../src/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Soo qabashada container-ka
+        const containerEL = document.querySelector(".container");
+        
+        // Samaynta Root (React 18 style)
+        const root = ReactDOM.createRoot(containerEL);
+
+        // Waxa aan soo bandhigayno (JSX)
+        const content = (
+            <div>
+                <h3>Hi user, ku soo dhawaada React!</h3>
+                <p>Kani waa koodhkii la saxay ee shaqaynaya.</p>
+                <button onClick={() => alert("Waad igu dhufatay!")}>Click Me</button>
+            </div>
+        );
+
+        // Rendering
+        root.render(content);
+    </script>
+</body>
+</html>
