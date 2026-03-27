@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple e-c app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../src/react.development.js"></script>
+    <script src="../src/react-dom.development.js"></script>
+    <script src="../src/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="container"></div>
+    <script type="text/babel">
+      const containerEl = document.querySelector(".container");
+      const root = ReactDOM.createRoot(containerEl);
+
+      function App() {
+        return (
+          <>
+            <ProductDetails name="saaboon" price="$10.90" />
+            <ProductDetails name="kastomo" price="$1.6" />
+
+            <ProductDetails name="shaar" price="$6.80" discount=" $5.5" />
+            <ProductDetails name="sirwal" price="$8.80" discount=" $5.5" />
+
+          </>
+        );
+      }
+      // oomo sonkor calen saliid
+      function ProductDetails({ name, price, discount }) {
+        return (
+          <>
+            <p>{name}</p>
+
+            {!discount ? (
+              <p>Price: {price}</p>
+            ) : (
+              <del>
+                <p>Price: {price}</p>
+              </del>
+            )}
+            {discount && <p>Discount {discount}</p>}
+
+            <button>Add Cart</button>
+          </>
+        );
+      }
+
+      root.render(<App />);
+    </script>
+  </body>
+</html>

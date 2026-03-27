@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> sampleform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../src/react.development.js"></script>
+    <script src="../src/react-dom.development.js"></script>
+    <script src="../src/babel.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      p {
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-family:
+          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      input {
+        display: block;
+        width: 33em;
+        margin: 30px;
+        padding: 10px 20px;
+        border-radius: 8px;
+        outline: none;
+        border-color: #1c1c1c65;
+      }
+      input:focus {
+        border: solid 2px #00f;
+        outline: none;
+      }
+      input::placeholder {
+        font-size: 1.1em;
+      }
+
+      button {
+        margin: 20px auto;
+        width: 25em;
+        height: 45px;
+        color: #fff;
+        background-color: #00f;
+        font-size: 1.1em;
+        display: block;
+        border-radius: 8px;
+
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container"></div>
+    <script type="text/babel">
+      const containerEL = document.querySelector(".container");
+      const root = ReactDOM.createRoot(containerEL);
+
+      function App() {
+        return <LoginForm />;
+      }
+
+      function LoginForm() {
+        return (
+          <>
+            <p>hello welcome to my website</p>
+            <input type="text" placeholder="Email" />
+            <input type="Password" placeholder="Password" />
+
+            <button>Login</button>
+            <button>Sign up</button>
+          </>
+        );
+      }
+      console.log(App());
+      root.render(<App />);
+    </script>
+  </body>
+</html>
